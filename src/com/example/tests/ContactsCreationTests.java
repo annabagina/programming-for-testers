@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 public class ContactsCreationTests extends TestBase {
 	@Test
-	public void testUntitled3() throws Exception {
+	public void testContactCreation() throws Exception {
 		openMainPage();
 		gotoAddContactPage();
 		fillContactForm(new ContactData("Anya", "Bagina", "Nsk", "8111111",

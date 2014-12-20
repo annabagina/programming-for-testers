@@ -2,7 +2,7 @@ package com.example.fw;
 
 import org.openqa.selenium.By;
 
-public class NavigationHelper extends HelperBase{
+public class NavigationHelper extends HelperBase {
 
 	public NavigationHelper(ApplicationManager manager) {
 		super(manager);
@@ -13,7 +13,7 @@ public class NavigationHelper extends HelperBase{
 	}
 
 	public void gotoGroupsPage() {
-		driver.findElement(By.linkText("groups")).click();
+		click(By.linkText("groups"));
 	}
 
 }

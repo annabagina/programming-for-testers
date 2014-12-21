@@ -2,7 +2,7 @@ package com.example.tests;
 
 import org.testng.annotations.Test;
 
-public class ContactsCreationTests extends TestBase {
+public class ContactCreationTests extends TestBase {
 	@Test
 	public void testContactCreation() throws Exception {
 		app.getNavigationHelper().openMainPage();

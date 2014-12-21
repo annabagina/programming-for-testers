@@ -15,6 +15,9 @@ public class ContactData {
 	public String newgroup;
 	public String address2;
 	public String phone2;
+	
+	public ContactData() {
+	}
 
 	public ContactData(String firstname, String lastname, String address,
 			String home, String mobile, String work, String email,

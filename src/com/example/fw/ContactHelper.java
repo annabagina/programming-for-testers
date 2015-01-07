@@ -1,7 +1,13 @@
 package com.example.fw;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
 import com.example.tests.ContactData;
+import com.example.tests.GroupData;
 
 public class ContactHelper extends HelperBase {
 
@@ -27,7 +33,8 @@ public class ContactHelper extends HelperBase {
 		type(By.name("byear"), contact.byear);
 		type(By.name("address2"), contact.address2);
 		type(By.name("phone2"), contact.phone2);
-		// select(By.name("new_group"), contact.newgroup);
+		select(By.name("new_group"), contact.newgroup);
+
 	}
 
 	public void submitContactCreation() {
@@ -39,14 +46,25 @@ public class ContactHelper extends HelperBase {
 	}
 
 	public void initContactModification(int index) {
-		//a[contains(@href,"edit.php?id=")]
+		// a[contains(@href,"edit.php?id=")]
 		click(By.xpath("//tr[" + (index + 1) + "]/td/a/img[@title=\"Edit\"]"));
 	}
 
 	public void update() {
 		click(By.xpath("//input[@type=\"submit\" and @value=\"Update\"]"));
 	}
-	
+
+	public List<GroupData> getGroups() {
+		List<GroupData> groups = new ArrayList<GroupData>();
+		List<WebElement> options = driver.findElements(By.xpath("//select[@name=\"new_group\"]/option"));
+		for (WebElement option : options) {
+			GroupData group = new GroupData();
+			group.groupname = option.getText();
+			groups.add(group);
+		}
+		return groups;
+	}
+
 	public void delete() {
 		click(By.xpath("//input[@type=\"submit\" and @value=\"Delete\"]"));
 	}

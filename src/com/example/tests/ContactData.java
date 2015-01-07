@@ -38,4 +38,15 @@ public class ContactData {
 		this.address2 = address2;
 		this.phone2 = phone2;
 	}
+
+	@Override
+	public String toString() {
+		return "ContactData [firstname=" + firstname + ", lastname=" + lastname
+				+ ", address=" + address + ", home=" + home + ", mobile="
+				+ mobile + ", work=" + work + ", email=" + email + ", email2="
+				+ email2 + ", bday=" + bday + ", bmonth=" + bmonth + ", byear="
+				+ byear + ", newgroup=" + newgroup + ", address2=" + address2
+				+ ", phone2=" + phone2 + "]";
+	}
+	
 }

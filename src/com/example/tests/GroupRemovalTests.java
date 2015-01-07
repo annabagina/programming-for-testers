@@ -9,7 +9,7 @@ import java.util.Random;
 import org.testng.annotations.Test;
 
 public class GroupRemovalTests extends TestBase {
-	@Test(dataProvider = "randomValidGroupGenerator")
+	@Test
 	public void deleteSomeGroups() {
 		app.getNavigationHelper().openMainPage();
 		app.getNavigationHelper().gotoGroupsPage();

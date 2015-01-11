@@ -48,5 +48,69 @@ public class ContactData {
 				+ byear + ", newgroup=" + newgroup + ", address2=" + address2
 				+ ", phone2=" + phone2 + "]";
 	}
-	
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((bday == null) ? 0 : bday.hashCode());
+		result = prime * result + ((bmonth == null) ? 0 : bmonth.hashCode());
+		result = prime * result + ((byear == null) ? 0 : byear.hashCode());
+		result = prime * result
+				+ ((firstname == null) ? 0 : firstname.hashCode());
+		result = prime * result + ((home == null) ? 0 : home.hashCode());
+		result = prime * result
+				+ ((lastname == null) ? 0 : lastname.hashCode());
+		result = prime * result + ((mobile == null) ? 0 : mobile.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ContactData other = (ContactData) obj;
+		if (bday == null) {
+			if (other.bday != null)
+				return false;
+		} else if (!bday.equals(other.bday))
+			return false;
+		if (bmonth == null) {
+			if (other.bmonth != null)
+				return false;
+		} else if (!bmonth.equals(other.bmonth))
+			return false;
+		if (byear == null) {
+			if (other.byear != null)
+				return false;
+		} else if (!byear.equals(other.byear))
+			return false;
+		if (firstname == null) {
+			if (other.firstname != null)
+				return false;
+		} else if (!firstname.equals(other.firstname))
+			return false;
+		if (home == null) {
+			if (other.home != null)
+				return false;
+		} else if (!home.equals(other.home))
+			return false;
+		if (lastname == null) {
+			if (other.lastname != null)
+				return false;
+		} else if (!lastname.equals(other.lastname))
+			return false;
+		if (mobile == null) {
+			if (other.mobile != null)
+				return false;
+		} else if (!mobile.equals(other.mobile))
+			return false;
+		return true;
+	}
+
+		
 }
